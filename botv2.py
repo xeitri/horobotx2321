@@ -16,7 +16,7 @@ import sqlite3
 
 time = datetime.now(timezone('Asia/Tashkent')).strftime('%d.%m.%y')
 
-bot = telebot.TeleBot('1337227478:AAHTFFjO-L_OREx-jWFY6rpcVkJ0wHYipoY')
+bot = telebot.TeleBot('1292076999:AAFbBYvEOZjrlbPlzOCFkikttw-qTMkKoq8')
 
                     ########PHOTO##########
 
