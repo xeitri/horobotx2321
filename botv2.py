@@ -54,16 +54,13 @@ def inline(message):
     conn = sqlite3.connect('user.db')
     c = conn.cursor()
     c.execute(""" CREATE TABLE IF NOT EXISTS users (
-        user_id INT NOT NULL,
+        user_id INTEGER PRIMARY KEY,
         user_name TEXT
     )""")
     conn.commit()
     try:
         c.execute("SELECT * FROM users")
-        if c.fetchone() is None:
-            c.execute("INSERT INTO users (user_id, user_name) VALUES (?, ?);", (userid, firstname))
-        else:
-            print('Записан')
+        c.execute("INSERT INTO users (user_id, user_name) VALUES (?, ?);", (userid, firstname))
     except sqlite3.DatabaseError as error:
         print("Error:", error)
     conn.commit()
